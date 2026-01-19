@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Lisboa - Business Analyst & Financial Operations Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Header Section with Photo */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 50px 40px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            object-fit: cover;
+        }
+
+        .header-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .title {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.15em;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.7;
+        }
+
+        /* Value Proposition Banner */
+        .value-prop {
+            background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .value-prop h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .value-prop p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Quick Stats */
+        .stats-section {
+            background: #f8f9fa;
+            padding: 35px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Contact & Action Buttons */
+        .action-bar {
+            background: white;
+            padding: 25px 40px;
+            text-align: center;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary-action {
+            background: #1e3c72;
+            color: white;
+        }
+
+        .btn-primary-action:hover {
+            background: #2a5298;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+        }
+
+        .btn-secondary-action {
+            background: white;
+            color: #1e3c72;
+            border: 2px solid #1e3c72;
+        }
+
+        .btn-secondary-action:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .content {
+            padding: 50px 40px;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            color: #1e3c72;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 2px;
+        }
+
+        /* Project Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #e9ecef;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        .project-header h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.25);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .project-features {
+            margin-bottom: 20px;
+        }
+
+        .project-features h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            font-weight: 600;
+        }
+
+        .project-features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-features li {
+            padding: 5px 0;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .project-features li:before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e3c72;
+            border: 2px solid #1e3c72;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        /* Certifications Section */
+        .certifications-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 2px solid #e9ecef;
+        }
+
+        .certifications-section h2 {
+            color: #1e3c72;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #1e3c72;
+        }
+
+        .cert-category h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .cert-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cert-category li {
+            padding: 8px 0;
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .cert-category li:before {
+            content: "🎓 ";
+            margin-right: 8px;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .skills-section h2 {
+            color: #1e3c72;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid #1e3c72;
+        }
+
+        .skill-category h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.15em;
+            font-weight: 600;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-category li {
+            padding: 6px 0;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .skill-category li:before {
+            content: "▪ ";
+            color: #2a5298;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .footer h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact {
+            margin-bottom: 20px;
+        }
+
+        .footer-contact a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .footer-contact a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .header .title {
+                font-size: 1.3em;
+            }
+
+            .header-content {
+                flex-direction: column;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn-action {
+                width: 100%;
+            }
+
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Photo -->
+        <header class="header">
+            <div class="header-content">
+                <img src="./Profile-photo.jpg" alt="Kevin Lisboa" class="profile-photo">
+                <div class="header-text">
+                    <h1>Kevin A. Lisboa</h1>
+                    <div class="title">Business Analyst | Financial Operations Specialist</div>
+                    <div class="status-badge">✓ Open to New Opportunities</div>
+                    <div class="subtitle">
+                        MBA in Finance | IIBA-Endorsed Business Analysis | Six Sigma Yellow Belt<br>
+                        Specializing in financial operations, process improvement, and payment systems
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Value Proposition -->
+        <section class="value-prop">
+            <h2>Transforming Financial Operations Through Data-Driven Analysis</h2>
+            <p>
+                Experienced financial services professional with proven expertise in SWIFT payment processing, account reconciliation, 
+                and business process analysis. Combining deep domain knowledge in banking operations with systematic analytical 
+                methodologies to drive process improvements and operational efficiency.
+            </p>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">99.8%</div>
+                <div class="stat-label">Transaction Accuracy<br>SWIFT/ACH Processing</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$1.2M</div>
+                <div class="stat-label">Cost Savings<br>Process Improvements</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Years Operations<br>Leadership Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">Efficiency Improvement<br>Platform Optimization</div>
+            </div>
+        </section>
+
+        <!-- Action Bar -->
+        <section class="action-bar">
+            <div class="action-buttons">
+                <a href="mailto:KevinALisboa@gmail.com" class="btn-action btn-primary-action">📧 Email Me</a>
+                <a href="https://www.linkedin.com/in/kevinlisboawealth/" target="_blank" class="btn-action btn-secondary-action">LinkedIn Profile</a>
+                <a href="https://github.com/KlisboaFinance" target="_blank" class="btn-action btn-secondary-action">View GitHub</a>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h2 class="section-title">Portfolio Projects</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 1.1em;">
+                Interactive tools demonstrating financial modeling, data analysis, and business intelligence capabilities
+            </p>
+
+            <div class="projects-grid">
+                <!-- Project 1: Insurance Profitability Analyzer -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Insurance Business Profitability Analyzer</h3>
+                        <span class="project-tag">Financial Modeling</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Interactive financial analysis tool for insurance business profitability modeling, demonstrating capabilities 
+                            in financial forecasting, commission analysis, and revenue stream projections.
+                        </p>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Multi-scenario client profitability calculations</li>
+                                <li>Commission structure and overhead impact analysis</li>
+                                <li>Long-term revenue stream projections</li>
+                                <li>Interactive data visualization dashboards</li>
+                            </ul>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://klisboafinance.github.io/insurance-profitability-analyzer/" target="_blank" class="btn btn-primary">View Live Demo</a>
+                            <a href="https://github.com/KlisboaFinance/insurance-profitability-analyzer" target="_blank" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Property Investment Analyzer -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Property Investment Analyzer</h3>
+                        <span class="project-tag">Real Estate Analysis</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Comprehensive real estate investment analysis tool showcasing financial modeling, ROI calculations, 
+                            and cash flow projections for property investment decision-making.
+                        </p>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Property valuation and cash flow analysis</li>
+                                <li>ROI and capitalization rate calculations</li>
+                                <li>Investment scenario modeling and comparisons</li>
+                                <li>Financial projection visualizations</li>
+                            </ul>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://klisboafinance.github.io/property-investment-analyzer/" target="_blank" class="btn btn-primary">View Live Demo</a>
+                            <a href="https://github.com/KlisboaFinance/property-investment-analyzer" target="_blank" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Goal Progress Tracker -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Goal Progress Tracker</h3>
+                        <span class="project-tag">Project Management</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Interactive goal tracking and project management tool demonstrating systematic progress monitoring, 
+                            milestone achievement tracking, and visual status reporting.
+                        </p>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Visual progress tracking with color-coded indicators</li>
+                                <li>Multiple goal categories and project organization</li>
+                                <li>Real-time progress calculations and reporting</li>
+                                <li>User-centered design with clear visual hierarchy</li>
+                            </ul>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://klisboafinance.github.io/goal-progress-tracker/" target="_blank" class="btn btn-primary">View Live Demo</a>
+                            <a href="https://github.com/KlisboaFinance/goal-progress-tracker" target="_blank" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="certifications-section">
+                <h2>Professional Certifications & Education</h2>
+                <div class="cert-grid">
+                    <div class="cert-category">
+                        <h3>Business Analysis</h3>
+                        <ul>
+                            <li>Business Process Modeling (IIBA-Endorsed)</li>
+                            <li>Business Process Improvement</li>
+                            <li>Process Model Analysis</li>
+                            <li>Stakeholder Communication Strategies</li>
+                            <li>Meeting Facilitation</li>
+                        </ul>
+                    </div>
+                    <div class="cert-category">
+                        <h3>FinTech & Financial Services</h3>
+                        <ul>
+                            <li>FinTech Industry Professional (FTIP)</li>
+                            <li>Payment Technology Fundamentals</li>
+                            <li>Digital Banking Fundamentals</li>
+                            <li>Operational Modeling</li>
+                            <li>Financial Analysis Fundamentals</li>
+                        </ul>
+                    </div>
+                    <div class="cert-category">
+                        <h3>Data & Analytics</h3>
+                        <ul>
+                            <li>SQL Essential Training</li>
+                            <li>Advanced SQL for Data Analysis</li>
+                            <li>Classification - Fundamentals & Applications</li>
+                        </ul>
+                    </div>
+                    <div class="cert-category">
+                        <h3>Process Improvement</h3>
+                        <ul>
+                            <li>Six Sigma Yellow Belt</li>
+                            <li>Design for Six Sigma</li>
+                            <li>Project Management Essentials</li>
+                            <li>Accounting Fundamentals</li>
+                        </ul>
+                    </div>
+                    <div class="cert-category">
+                        <h3>Education</h3>
+                        <ul>
+                            <li>MBA in Finance (Expected December 2026)</li>
+                            <li>Bachelor of Business Administration - Marketing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h2>Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Business Analysis</h3>
+                        <ul>
+                            <li>Requirements Gathering & Documentation</li>
+                            <li>Process Mapping & Visualization</li>
+                            <li>Stakeholder Engagement & Interviews</li>
+                            <li>Gap Analysis & Root Cause Analysis</li>
+                            <li>Impact Analysis</li>
+                            <li>Business Process Improvement</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Financial Operations</h3>
+                        <ul>
+                            <li>Payment Processing (SWIFT, ACH, Wire)</li>
+                            <li>Account Reconciliation</li>
+                            <li>Transaction Processing & Audit Support</li>
+                            <li>General Ledger Maintenance</li>
+                            <li>Financial Compliance & Controls</li>
+                            <li>Cash Position Management</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul>
+                            <li>SQL & Data Analysis</li>
+                            <li>Financial Modeling</li>
+                            <li>Data Visualization</li>
+                            <li>Process Automation</li>
+                            <li>ERP/Banking Systems</li>
+                            <li>Microsoft Office Suite (Advanced)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Domain Expertise</h3>
+                        <ul>
+                            <li>Banking Operations & Compliance</li>
+                            <li>Insurance & Wealth Management</li>
+                            <li>Payment Systems & FinTech</li>
+                            <li>Regulatory Compliance (Federal Banking)</li>
+                            <li>Vendor Management</li>
+                            <li>Cross-Functional Team Leadership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <h3>Let's Connect</h3>
+            <p style="opacity: 1; font-size: 1.1em; margin-bottom: 20px;">
+                Seeking opportunities in Financial Operations, Business Analysis, and Payment Operations
+            </p>
+            <div class="footer-contact">
+                <a href="mailto:KevinALisboa@gmail.com">📧 KevinALisboa@gmail.com</a>
+                <a href="https://www.linkedin.com/in/kevinlisboawealth/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/KlisboaFinance" target="_blank">GitHub</a>
+            </div>
+            <p>&copy; 2026 Kevin A. Lisboa - Business Analyst & Financial Operations Portfolio</p>
+        </footer>
+    </div>
+</body>
+</html>
